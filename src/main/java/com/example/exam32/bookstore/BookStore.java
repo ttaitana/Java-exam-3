@@ -2,7 +2,7 @@ package com.example.exam32.bookstore;
 
 public class BookStore {
     private int bookPrice = 100;
-    private String[] cart;
+    private Integer[] cart;
 
 
     public void increaseBookInCart(int index, int value) {
@@ -19,27 +19,27 @@ public class BookStore {
         this.bookPrice = bookPrice;
     }
 
-    public String[] getCart() {
+    public Integer[] getCart() {
         return cart;
     }
 
-    public void setCart(String[] cart) {
+    public void setCart(Integer[] cart) {
         this.cart = cart;
     }
 
     public BookStore() {
     }
 
-    public BookStore(String[] cart) {
+    public BookStore(Integer[] cart) {
         this.cart = cart;
     }
 
     private void countBookInCart() {
-        for (String book : this.cart) {
-            if (Integer.parseInt(book) > 5 || Integer.parseInt(book) < 1) {
+        for (int book : this.cart) {
+            if (book > 5 || book < 1) {
                 continue;
             }
-            this.increaseBookInCart(Integer.parseInt(book) - 1, 1);
+            this.increaseBookInCart(book - 1, 1);
         }
     }
 

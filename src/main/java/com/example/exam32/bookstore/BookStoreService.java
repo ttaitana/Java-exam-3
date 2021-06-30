@@ -56,12 +56,11 @@ public class BookStoreService {
         return responses;
     }
 
-//    public BookStoreCheckoutResponse checkoutBooks(BookStoreCheckoutRequest req) {
-//        BookStore bs = new BookStore();
-//        Object[] objects  = req.getBooksList().toArray();
-//        String cart[]= Arrays.copyOf(objects, objects.length, String[].class);
-//        bs.setCart(cart);
-//        List<BookStoreResponse> books = this.getAllBooks();
-//        return new BookStoreCheckoutResponse(bs.priceCalculate(), books);
-//    }
+    public BookStoreCheckoutResponse checkoutBooks(BookStoreCheckoutRequest req) {
+        BookStore bs = new BookStore();
+        Integer[] cart = req.getBooksList().stream().toArray(Integer[]::new);
+        bs.setCart(cart);
+        double totalPrice = bs.priceCalculate();
+        return new BookStoreCheckoutResponse(totalPrice);
+    }
 }

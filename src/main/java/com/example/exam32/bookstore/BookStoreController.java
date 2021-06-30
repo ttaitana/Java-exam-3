@@ -38,9 +38,9 @@ public class BookStoreController {
         return result;
     }
 
-//    @PostMapping("/books/checkout")
-//    public BookStoreCheckoutResponse checkout(@RequestBody BookStoreCheckoutRequest req){
-//        BookStoreCheckoutResponse result = this.bookStoreService.checkoutBooks(req);
-//        return result;
-//    }
+    @PostMapping("/books/checkout")
+    public BookStoreCheckoutResponse checkout(@RequestBody BookStoreCheckoutRequest req){
+        BookStoreCheckoutResponse result = this.bookStoreService.checkoutBooks(req);
+        return result;
+    }
 }
