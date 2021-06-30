@@ -3,6 +3,8 @@ package com.example.exam32.bookstore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,6 +14,11 @@ public class BookStoreService {
 
     public void setBookStoreRepository(BookStoreRepository bookStoreRepository) {
         this.bookStoreRepository = bookStoreRepository;
+    }
+
+    public List<BookStoreResponse> getAllBooks(){
+        List<BookStoreEntity> result = this.bookStoreRepository.findAll();
+        return responseMappingList(result);
     }
 
     public BookStoreResponse getBook(int id) {
@@ -33,5 +40,13 @@ public class BookStoreService {
 //       ? Not found!!
 //        throw new EmployeeNotFoundException(String.format("Employee id %d not found", id));
         return new BookStoreResponse();
+    }
+
+    private List<BookStoreResponse> responseMappingList(List<BookStoreEntity> result) {
+        List<BookStoreResponse> responses = new ArrayList<>();
+        result.forEach(res -> {
+            responses.add(this.responseMapping(Optional.ofNullable(res)));
+        });
+        return responses;
     }
 }
