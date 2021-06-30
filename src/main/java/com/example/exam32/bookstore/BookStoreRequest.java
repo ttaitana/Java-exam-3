@@ -1,20 +1,9 @@
 package com.example.exam32.bookstore;
 
-public class BookStoreResponse{
+public class BookStoreRequest{
 	private int amount;
 	private int price;
-	private int id;
 	private String bookName;
-
-	public BookStoreResponse(int amount, int price, int id, String bookName) {
-		this.amount = amount;
-		this.price = price;
-		this.id = id;
-		this.bookName = bookName;
-	}
-
-	public BookStoreResponse() {
-	}
 
 	public void setAmount(int amount){
 		this.amount = amount;
@@ -32,19 +21,20 @@ public class BookStoreResponse{
 		return price;
 	}
 
-	public void setId(int id){
-		this.id = id;
-	}
-
-	public int getId(){
-		return id;
-	}
-
 	public void setBookName(String bookName){
 		this.bookName = bookName;
 	}
 
 	public String getBookName(){
 		return bookName;
+	}
+
+	public BookStoreRequest() {
+	}
+
+	public BookStoreRequest(int amount, int price, String bookName) {
+		this.amount = amount;
+		this.price = price;
+		this.bookName = bookName;
 	}
 }

@@ -1,18 +1,35 @@
 package com.example.exam32.bookstore;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class BookStoreEntity {
+	@Column
 	private int amount;
+
+	@Column
 	private int price;
+
+	@Id
+	@GeneratedValue
 	private int id;
+
+	@Column
 	private String bookName;
 
 	public BookStoreEntity(int amount, int price, int id, String bookName) {
 		this.amount = amount;
 		this.price = price;
 		this.id = id;
+		this.bookName = bookName;
+	}
+
+	public BookStoreEntity(int amount, int price, String bookName) {
+		this.amount = amount;
+		this.price = price;
 		this.bookName = bookName;
 	}
 
