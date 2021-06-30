@@ -1,9 +1,15 @@
 package com.example.exam32.bookstore;
 
+import com.example.exam32.bookstore.dto.BookStoreCheckoutRequest;
+import com.example.exam32.bookstore.dto.BookStoreCheckoutResponse;
+import com.example.exam32.bookstore.dto.BookStoreRequest;
+import com.example.exam32.bookstore.dto.BookStoreResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,4 +55,13 @@ public class BookStoreService {
         });
         return responses;
     }
+
+//    public BookStoreCheckoutResponse checkoutBooks(BookStoreCheckoutRequest req) {
+//        BookStore bs = new BookStore();
+//        Object[] objects  = req.getBooksList().toArray();
+//        String cart[]= Arrays.copyOf(objects, objects.length, String[].class);
+//        bs.setCart(cart);
+//        List<BookStoreResponse> books = this.getAllBooks();
+//        return new BookStoreCheckoutResponse(bs.priceCalculate(), books);
+//    }
 }

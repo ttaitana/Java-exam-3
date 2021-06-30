@@ -1,4 +1,4 @@
-package com.example.exam32.bookstore;
+package com.example.exam32.bookstore.dto;
 
 public class BookStoreRequest{
 	private int amount;

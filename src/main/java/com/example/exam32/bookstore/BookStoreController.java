@@ -1,5 +1,9 @@
 package com.example.exam32.bookstore;
 
+import com.example.exam32.bookstore.dto.BookStoreCheckoutRequest;
+import com.example.exam32.bookstore.dto.BookStoreCheckoutResponse;
+import com.example.exam32.bookstore.dto.BookStoreRequest;
+import com.example.exam32.bookstore.dto.BookStoreResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,4 +37,10 @@ public class BookStoreController {
         BookStoreResponse result = this.bookStoreService.createBook(req);
         return result;
     }
+
+//    @PostMapping("/books/checkout")
+//    public BookStoreCheckoutResponse checkout(@RequestBody BookStoreCheckoutRequest req){
+//        BookStoreCheckoutResponse result = this.bookStoreService.checkoutBooks(req);
+//        return result;
+//    }
 }
